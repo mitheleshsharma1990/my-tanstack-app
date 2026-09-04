@@ -1,11 +1,11 @@
 export interface CartRoot {
-  carts: CartItem[];
+  carts: Cart[];
   total: number;
   skip: number;
   limit: number;
 }
 
-export interface CartItem {
+export interface Cart {
   id: number;
   products: Product[];
   total: number;

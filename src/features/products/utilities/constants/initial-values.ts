@@ -1,4 +1,5 @@
-import { ProductFormData, StockOptions } from '../../models/product';
+import { StockOptions } from '../../models/product';
+import { ProductFormData } from '../../validators/add-form-validator';
 
 export const INITIAL_PRODUCT_VALUE: ProductFormData = {
   title: 'Eyeshadow Palette with Mirror',

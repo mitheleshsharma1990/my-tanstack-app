@@ -3,8 +3,8 @@ import { useAuth } from '../../authentication/components/auth-provider';
 import { useState, useEffect } from 'react';
 import { useQuery } from '@tanstack/react-query';
 import CartItemRow from '../ui/cart-item';
-import { CartItem } from '../models/cart'
-export default function Cart() {
+import { Cart } from '../models/cart'
+export default function CartComponent() {
   const { loginData } = useAuth();
 
   const {
@@ -21,7 +21,7 @@ export default function Cart() {
     enabled: !!loginData?.id,
   });
 
-  const [cartItems, setCartItems] = useState<CartItem | null>(null);
+  const [cartItems, setCartItems] = useState<Cart | null>(null);
 
   useEffect(() => {
     if (cartData?.carts?.[0]) {
@@ -62,7 +62,7 @@ export default function Cart() {
       discountedTotal: parseFloat((discountedCartTotal ?? 0).toFixed(2)),
       totalQuantity: totalQuantityCart ?? 0,
       products: newCartItems || [],
-    } as CartItem);
+    } as Cart);
   };
 
   const decrementItemQuantity = (id: number) => {
@@ -100,7 +100,7 @@ export default function Cart() {
       discountedTotal: parseFloat((discountedCartTotal ?? 0).toFixed(2)),
       totalQuantity: (totalQuantityCart ?? 0),
       products: newCartItems ?? [],
-    } as CartItem);
+    } as Cart);
   };
   if (!loginData?.id) return <div>Please log in to view your cart.</div>;
   if (isPending) return <div>Loading cart...</div>;

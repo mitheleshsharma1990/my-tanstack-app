@@ -51,11 +51,6 @@ export interface Meta {
   qrCode: string;
 }
 
-export type ProductFormData = Omit<
-  Product,
-  'id' | 'rating' | 'sku' | 'reviews' | 'meta'
-> & { id?: Product['id'] };
-
 export interface DeleteProduct extends Product {
   isDeleted: boolean;
   deletedOn: string | Date; // Use Date if parsing to object, or string for ISO strings

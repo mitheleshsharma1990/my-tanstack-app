@@ -6,8 +6,6 @@ import ProductsView from './features/products/components/products-view';
 import AddProductForm from './features/products/components/add-product-form';
 import Layout from './features/products/components/layout';
 import CartComponent from './features/cart/components/cart';
-import { BoardComponent } from './tic-tac-toe';
-import { ProductForm } from './practice-form'
 function App() {
   return (
     <Routes>
@@ -17,8 +15,6 @@ function App() {
         <Route path="/cart" element={<CartComponent />} />
         <Route path="/products/add" element={<AddProductForm />} />
         <Route path="/products/:id" element={<ProductDetails />} />
-        <Route path="/products/game" element={<BoardComponent />} />
-        <Route path="/products/form" element={<ProductForm />} />
       </Route>
 
       <Route path="/infiniteview" element={<ProductsView />} />
